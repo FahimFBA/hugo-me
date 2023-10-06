@@ -40,7 +40,7 @@ theme = "DoIt"
     # Windows v8-10 tile color
     tileColor = "#da532c"
 
-# Search config
+# DoIt NEW | 0.2.0 Search config
 [params.search]
   enable = true
   # type of search engine ("algolia", "fuse")
@@ -48,29 +48,31 @@ theme = "DoIt"
   # max index length of the chunked content
   contentLength = 4000
   # placeholder of the search bar
-  placeholder = "search here..."
-  # max number of results length
+  placeholder = "search content..."
+  # DoIt NEW | 0.2.1 max number of results length
   maxResultLength = 10
-  # snippet length of the result
+  # DoIt NEW | 0.2.3 snippet length of the result
   snippetLength = 30
-  # HTML tag name of the highlight part in results
+  # DoIt NEW | 0.2.1 HTML tag name of the highlight part in results
   highlightTag = "em"
-  # whether to use the absolute URL based on the baseURL in search index
+  # DoIt NEW | 0.2.4 whether to use the absolute URL based on the baseURL in search index
   absoluteURL = false
   [params.search.algolia]
     index = ""
     appID = ""
     searchKey = ""
   [params.search.fuse]
+    # DoIt NEW | 0.2.12 https://fusejs.io/api/options.html
     isCaseSensitive = false
     minMatchCharLength = 2
-    findAllMatches = false
+    findAllMatches = true
     location = 0
     threshold = 0.3
     distance = 100
     ignoreLocation = false
-    useExtendedSearch = false
-    ignoreFieldNorm = false
+    useExtendedSearch = true
+    ignoreFieldNorm = true
+
 # Header config
 [params.header]
   # desktop header mode ("fixed", "normal", "auto")
@@ -97,19 +99,29 @@ theme = "DoIt"
   since = 2020
 
 # DoIt NEW | 0.2.0 Section (all posts) page config
-  [params.section]
-    # special amount of posts in each section page
-    paginate = 20
-    # date format (month and day)
-    dateFormat = "01-02"
-    # amount of RSS pages
-    rss = 10
+[params.section]
+  # special amount of posts in each section page
+  paginate = 20
+  # date format (month and day)
+  dateFormat = "01-02"
+  # amount of RSS pages
+  rss = 10
     # DoIt NEW | 0.2.13 recently updated posts settings
     [params.section.recentlyUpdated]
       enable = false
       rss = false
       days = 30
       maxCount = 10
+
+
+# DoIt NEW | 0.2.0 List (category or tag) page config
+ [params.list]
+    # special amount of posts in each list page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "01-02"
+    # amount of RSS pages
+    rss = 10
 
 
 # Home page config
